@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:title" content="Plaza Latina $5,000 Cash Giveaway">
+<meta property="og:description" content="7 Winners · Drawing Live at 2:00 PM · $5 per ticket, max 5 per person · Follow us on Instagram to enter!">
+<meta name="theme-color" content="#8B0000">
+<title>Plaza Latina — $5,000 Cash Giveaway</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:#111;font-family:'DM Sans',sans-serif;min-height:100vh;padding:16px;}
+.wrap{max-width:480px;margin:0 auto;}
+
+/* lang toggle */
+.lang-bar{display:flex;justify-content:flex-end;margin-bottom:12px;}
+.lang-toggle{display:flex;background:#1a0a00;border:2px solid #D4A017;border-radius:24px;overflow:hidden;}
+.lang-btn{padding:8px 20px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:700;border:none;background:transparent;color:#D4A017;cursor:pointer;letter-spacing:1px;transition:all .2s;}
+.lang-btn.active{background:#D4A017;color:#1a0a00;}
+
+/* tab nav */
+.tabs{display:flex;gap:6px;margin-bottom:14px;}
+.tab{flex:1;padding:10px 6px;background:#1a0a00;border:1px solid rgba(212,160,23,0.3);border-radius:8px;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;color:rgba(212,160,23,0.6);cursor:pointer;text-align:center;transition:all .2s;}
+.tab.active{background:#B22222;border-color:#B22222;color:#fff;}
+
+/* flyer card */
+.flyer{background:#1a0a00;border-radius:18px;overflow:hidden;border:2px solid #D4A017;margin-bottom:20px;}
+
+/* header */
+.fh{background:#8B0000;padding:28px 20px 20px;text-align:center;border-bottom:3px solid #D4A017;}
+.brand{font-family:'Bebas Neue',sans-serif;font-size:38px;letter-spacing:4px;color:#D4A017;line-height:1;}
+.presents{font-size:11px;letter-spacing:4px;color:rgba(255,255,255,0.6);text-transform:uppercase;margin:4px 0 12px;}
+.amount{font-family:'Bebas Neue',sans-serif;font-size:80px;line-height:1;color:#fff;}
+.amount span{color:#D4A017;}
+.giveaway{font-family:'Bebas Neue',sans-serif;font-size:28px;letter-spacing:6px;color:rgba(255,255,255,0.9);}
+.subtitle{font-size:13px;color:rgba(255,255,255,0.5);margin-top:8px;letter-spacing:1px;}
+
+/* body */
+.fb{padding:20px 18px;}
+
+/* info pills */
+.pills{display:flex;gap:8px;margin-bottom:18px;}
+.pill{flex:1;background:rgba(212,160,23,0.1);border:1px solid rgba(212,160,23,0.3);border-radius:10px;padding:10px 8px;text-align:center;}
+.pill-label{font-size:10px;letter-spacing:2px;color:#D4A017;text-transform:uppercase;font-weight:600;display:block;margin-bottom:3px;}
+.pill-val{font-size:15px;font-weight:700;color:#fff;display:block;line-height:1.2;}
+
+/* section headings */
+.sh{font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:2px;color:#D4A017;border-bottom:1px solid rgba(212,160,23,0.25);padding-bottom:6px;margin-bottom:12px;}
+
+/* prize rows */
+.prizes{display:flex;flex-direction:column;gap:6px;margin-bottom:6px;}
+.prize-row{display:flex;align-items:center;border-radius:8px;padding:10px 12px;}
+.prize-row.p1{background:rgba(212,160,23,0.15);border:1px solid rgba(212,160,23,0.4);}
+.prize-row.p2{background:rgba(178,34,34,0.15);border:1px solid rgba(178,34,34,0.3);}
+.prize-row.pn{background:rgba(255,255,255,0.04);border:0.5px solid rgba(255,255,255,0.08);}
+.prize-place{font-size:12px;font-weight:700;color:#D4A017;width:82px;text-transform:uppercase;letter-spacing:.5px;}
+.prize-row.p2 .prize-place{color:#e87070;}
+.prize-row.pn .prize-place{color:rgba(212,160,23,0.7);}
+.bar-wrap{flex:1;height:6px;background:rgba(255,255,255,0.1);border-radius:3px;margin:0 10px;overflow:hidden;}
+.bar{height:100%;border-radius:3px;background:#B22222;}
+.prize-row.p1 .bar{background:#D4A017;}
+.prize-amt{font-size:16px;font-weight:700;color:#fff;width:58px;text-align:right;}
+
+.total-row{display:flex;justify-content:space-between;align-items:center;border-top:1px solid rgba(212,160,23,0.3);margin-top:10px;padding-top:10px;margin-bottom:18px;}
+.total-label{font-size:11px;letter-spacing:2px;color:#D4A017;font-weight:700;text-transform:uppercase;}
+.total-amt{font-family:'Bebas Neue',sans-serif;font-size:24px;color:#D4A017;letter-spacing:1px;}
+
+/* ticket box */
+.ticket-box{background:rgba(178,34,34,0.12);border:1px solid rgba(178,34,34,0.35);border-radius:12px;padding:14px 16px;margin-bottom:16px;}
+
+/* rule list */
+.rules-list{list-style:none;display:flex;flex-direction:column;gap:8px;}
+.rules-list li{display:flex;align-items:flex-start;gap:10px;font-size:14px;color:rgba(255,255,255,0.82);line-height:1.5;}
+.icon{color:#D4A017;font-size:18px;margin-top:1px;flex-shrink:0;}
+
+/* QR box */
+.qr-wrap{display:flex;gap:12px;align-items:center;background:rgba(255,255,255,0.04);border:0.5px solid rgba(255,255,255,0.12);border-radius:10px;padding:14px;margin-bottom:16px;}
+.qr-placeholder{width:80px;height:80px;flex-shrink:0;background:#fff;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:10px;color:#333;text-align:center;font-weight:700;line-height:1.5;}
+.qr-text strong{display:block;font-size:14px;color:#fff;margin-bottom:4px;}
+.qr-text span{font-size:13px;color:rgba(255,255,255,0.55);line-height:1.4;}
+
+/* flow cards */
+.flow-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:14px;}
+.flow-card{background:rgba(255,255,255,0.04);border:0.5px solid rgba(255,255,255,0.1);border-radius:10px;padding:12px;}
+.flow-num{font-family:'Bebas Neue',sans-serif;font-size:32px;color:#D4A017;line-height:1;}
+.flow-title{font-size:12px;font-weight:700;color:#fff;margin:3px 0 5px;text-transform:uppercase;letter-spacing:.5px;}
+.flow-desc{font-size:12px;color:rgba(255,255,255,0.5);line-height:1.4;}
+
+.order-box{background:rgba(212,160,23,0.07);border:1px solid rgba(212,160,23,0.25);border-radius:10px;padding:14px;margin-top:4px;}
+.order-items{display:flex;flex-direction:column;gap:6px;margin-top:10px;}
+.order-item{display:flex;justify-content:space-between;align-items:center;font-size:14px;color:rgba(255,255,255,0.75);padding:6px 0;border-bottom:0.5px solid rgba(255,255,255,0.07);}
+.order-item:last-child{border-bottom:none;color:#D4A017;font-weight:700;font-size:15px;}
+.order-arrow{color:rgba(212,160,23,0.4);font-size:12px;}
+
+/* legal sections */
+.legal-section{background:rgba(255,255,255,0.03);border:0.5px solid rgba(255,255,255,0.09);border-radius:10px;padding:14px;margin-bottom:12px;}
+.legal-section .sh{font-size:16px;margin-bottom:10px;}
+
+/* footer banner */
+.banner{background:#8B0000;text-align:center;padding:14px 16px;display:flex;align-items:center;justify-content:center;gap:8px;border-top:2px solid #D4A017;flex-wrap:wrap;}
+.banner span{font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:2px;color:#fff;}
+.banner .highlight{color:#D4A017;font-size:24px;}
+
+/* share section */
+.share-section{background:#1a0a00;border:1px solid rgba(212,160,23,0.3);border-radius:14px;padding:18px;margin-bottom:16px;text-align:center;}
+.share-title{font-family:'Bebas Neue',sans-serif;font-size:22px;color:#D4A017;letter-spacing:2px;margin-bottom:6px;}
+.share-sub{font-size:13px;color:rgba(255,255,255,0.5);margin-bottom:14px;line-height:1.5;}
+.share-btns{display:flex;flex-direction:column;gap:8px;}
+.share-btn{display:flex;align-items:center;justify-content:center;gap:10px;padding:13px;border-radius:10px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;cursor:pointer;border:none;text-decoration:none;transition:opacity .2s;}
+.share-btn:active{opacity:.8;}
+.btn-copy{background:#D4A017;color:#1a0a00;}
+.btn-whatsapp{background:#25D366;color:#fff;}
+.btn-sms{background:#B22222;color:#fff;}
+.copied-msg{font-size:13px;color:#D4A017;margin-top:8px;display:none;}
+
+.footer-legal{text-align:center;font-size:11px;color:rgba(255,255,255,0.25);padding:8px 0 16px;line-height:1.6;}
+
+.hidden{display:none;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="lang-bar">
+    <div class="lang-toggle">
+      <button class="lang-btn active" onclick="setLang('en')" id="btn-en">EN</button>
+      <button class="lang-btn" onclick="setLang('es')" id="btn-es">ES</button>
+    </div>
+  </div>
+
+  <div class="tabs">
+    <button class="tab active" onclick="showTab('flyer')"><span class="en-t">Flyer</span><span class="es-t hidden">Volante</span></button>
+    <button class="tab" onclick="showTab('flow')"><span class="en-t">Event Flow</span><span class="es-t hidden">Flujo</span></button>
+    <button class="tab" onclick="showTab('rules')"><span class="en-t">Official Rules</span><span class="es-t hidden">Reglamento</span></button>
+    <button class="tab" onclick="showTab('share')"><span class="en-t">Share</span><span class="es-t hidden">Compartir</span></button>
+  </div>
+
+  <!-- FLYER TAB -->
+  <div id="tab-flyer">
+    <div class="flyer">
+      <div class="fh">
+        <div class="brand">Plaza Latina</div>
+        <div class="presents en-t">Presents</div>
+        <div class="presents es-t hidden">Presenta</div>
+        <div class="amount"><span>$5,000</span></div>
+        <div class="giveaway en-t">Cash Giveaway</div>
+        <div class="giveaway es-t hidden">Sorteo de Efectivo</div>
+        <div class="subtitle en-t">7 Winners &nbsp;·&nbsp; Drawing Live at 2:00 PM</div>
+        <div class="subtitle es-t hidden">7 Ganadores &nbsp;·&nbsp; Sorteo en Vivo a las 2:00 PM</div>
+      </div>
+      <div class="fb">
+        <div class="pills">
+          <div class="pill">
+            <span class="pill-label en-t">Grand Prize</span>
+            <span class="pill-label es-t hidden">Gran Premio</span>
+            <span class="pill-val">$1,500</span>
+          </div>
+          <div class="pill">
+            <span class="pill-label en-t">2nd Place</span>
+            <span class="pill-label es-t hidden">2do Lugar</span>
+            <span class="pill-val">$1,000</span>
+          </div>
+          <div class="pill">
+            <span class="pill-label en-t">Tickets</span>
+            <span class="pill-label es-t hidden">Boletos</span>
+            <span class="pill-val en-t">$5 · max 5</span>
+            <span class="pill-val es-t hidden">$5 · máx 5</span>
+          </div>
+        </div>
+
+        <div class="sh en-t">Prize Breakdown</div>
+        <div class="sh es-t hidden">Distribución de Premios</div>
+        <div class="prizes">
+          <div class="prize-row p1">
+            <span class="prize-place en-t">1st — Grand</span>
+            <span class="prize-place es-t hidden">1er — Gran Premio</span>
+            <div class="bar-wrap"><div class="bar" style="width:100%"></div></div>
+            <span class="prize-amt">$1,500</span>
+          </div>
+          <div class="prize-row p2">
+            <span class="prize-place en-t" style="color:#e87070;">2nd Place</span>
+            <span class="prize-place es-t hidden" style="color:#e87070;">2do Lugar</span>
+            <div class="bar-wrap"><div class="bar" style="width:67%"></div></div>
+            <span class="prize-amt">$1,000</span>
+          </div>
+          <div class="prize-row pn">
+            <span class="prize-place en-t">3rd Place</span>
+            <span class="prize-place es-t hidden">3er Lugar</span>
+            <div class="bar-wrap"><div class="bar" style="width:53%"></div></div>
+            <span class="prize-amt">$800</span>
+          </div>
+          <div class="prize-row pn">
+            <span class="prize-place en-t">4th Place</span>
+            <span class="prize-place es-t hidden">4to Lugar</span>
+            <div class="bar-wrap"><div class="bar" style="width:40%"></div></div>
+            <span class="prize-amt">$600</span>
+          </div>
+          <div class="prize-row pn">
+            <span class="prize-place en-t">5th Place</span>
+            <span class="prize-place es-t hidden">5to Lugar</span>
+            <div class="bar-wrap"><div class="bar" style="width:30%"></div></div>
+            <span class="prize-amt">$450</span>
+          </div>
+          <div class="prize-row pn">
+            <span class="prize-place en-t">6th Place</span>
+            <span class="prize-place es-t hidden">6to Lugar</span>
+            <div class="bar-wrap"><div class="bar" style="width:23%"></div></div>
+            <span class="prize-amt">$350</span>
+          </div>
+          <div class="prize-row pn">
+            <span class="prize-place en-t">7th Place</span>
+            <span class="prize-place es-t hidden">7mo Lugar</span>
+            <div class="bar-wrap"><div class="bar" style="width:20%"></div></div>
+            <span class="prize-amt">$300</span>
+          </div>
+        </div>
+        <div class="total-row">
+          <span class="total-label en-t">Total Prize Pool</span>
+          <span class="total-label es-t hidden">Premio Total</span>
+          <span class="total-amt">$5,000</span>
+        </div>
+
+        <div class="ticket-box">
+          <div class="sh en-t">How to Get Your Tickets</div>
+          <div class="sh es-t hidden">Cómo Obtener Tus Boletos</div>
+          <ul class="rules-list">
+            <li>
+              <span class="icon">&#9654;</span>
+              <span class="en-t">Follow Plaza Latina on Instagram — scan the QR code below</span>
+              <span class="es-t hidden">Sigue a Plaza Latina en Instagram — escanea el código QR abajo</span>
+            </li>
+            <li>
+              <span class="icon">&#9654;</span>
+              <span class="en-t">Show proof of follow to staff at the front entry table</span>
+              <span class="es-t hidden">Muestra prueba de seguimiento al personal en la mesa de entrada</span>
+            </li>
+            <li>
+              <span class="icon">&#9654;</span>
+              <span class="en-t">Purchase up to 5 tickets at $5 each — more tickets, more chances!</span>
+              <span class="es-t hidden">Compra hasta 5 boletos a $5 cada uno — más boletos, más oportunidades!</span>
+            </li>
+            <li>
+              <span class="icon">&#9654;</span>
+              <span class="en-t">Must be 18+ and present at time of drawing to claim your prize</span>
+              <span class="es-t hidden">Debes tener 18+ años y estar presente en el sorteo para reclamar tu premio</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="qr-wrap">
+          <div class="qr-placeholder">SCAN<br>QR<br>CODE</div>
+          <div class="qr-text">
+            <strong class="en-t">Step 1: Follow us on Instagram</strong>
+            <strong class="es-t hidden">Paso 1: Síguenos en Instagram</strong>
+            <span class="en-t">Scan to follow @PlazaLatina before heading to the ticket table. Staff verifies your follow on the spot.</span>
+            <span class="es-t hidden">Escanea para seguir @PlazaLatina antes de ir a la mesa. El personal verifica en el momento.</span>
+          </div>
+        </div>
+      </div>
+      <div class="banner">
+        <span class="en-t">Winner has</span><span class="es-t hidden">El ganador tiene</span>
+        <span class="highlight">&nbsp;30 <span class="en-t">SEC</span><span class="es-t hidden">SEG</span>&nbsp;</span>
+        <span class="en-t">to claim or next ticket drawn</span><span class="es-t hidden">para reclamar o se saca otro boleto</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- FLOW TAB -->
+  <div id="tab-flow" class="hidden">
+    <div class="flyer">
+      <div class="fh">
+        <div class="brand">Plaza Latina</div>
+        <div class="presents en-t">Staff Guide — Event Day Flow</div>
+        <div class="presents es-t hidden">Guía del Personal — Flujo del Día</div>
+        <div class="giveaway en-t">$5,000 · 7 Winners</div>
+        <div class="giveaway es-t hidden">$5,000 · 7 Ganadores</div>
+        <div class="subtitle en-t">Drawing at 2:00 PM Sharp</div>
+        <div class="subtitle es-t hidden">Sorteo a las 2:00 PM en Punto</div>
+      </div>
+      <div class="fb">
+        <div class="sh en-t">Before the Event</div>
+        <div class="sh es-t hidden">Antes del Evento</div>
+        <div class="flow-grid">
+          <div class="flow-card">
+            <div class="flow-num">01</div>
+            <div class="flow-title en-t">Setup Entry Table</div>
+            <div class="flow-title es-t hidden">Preparar Mesa</div>
+            <div class="flow-desc en-t">Numbered ticket rolls, cash box, phone for Instagram verification</div>
+            <div class="flow-desc es-t hidden">Rollos numerados, caja de efectivo, teléfono para verificar Instagram</div>
+          </div>
+          <div class="flow-card">
+            <div class="flow-num">02</div>
+            <div class="flow-title en-t">Brief Your Staff</div>
+            <div class="flow-title es-t hidden">Informar al Personal</div>
+            <div class="flow-desc en-t">1–2 people at door only. Verify follow, collect $5/ticket, max 5 per person</div>
+            <div class="flow-desc es-t hidden">1–2 personas en la puerta. Verificar seguimiento, cobrar $5/boleto, máx. 5 por persona</div>
+          </div>
+        </div>
+
+        <div class="sh en-t">During the Event</div>
+        <div class="sh es-t hidden">Durante el Evento</div>
+        <div class="flow-grid">
+          <div class="flow-card">
+            <div class="flow-num">03</div>
+            <div class="flow-title en-t">Verify Instagram</div>
+            <div class="flow-title es-t hidden">Verificar Instagram</div>
+            <div class="flow-desc en-t">Guest shows @PlazaLatina follow on their phone. Staff confirms, then sells tickets</div>
+            <div class="flow-desc es-t hidden">El invitado muestra el seguimiento. El personal confirma y vende boletos</div>
+          </div>
+          <div class="flow-card">
+            <div class="flow-num">04</div>
+            <div class="flow-title en-t">Hand Out Tickets</div>
+            <div class="flow-title es-t hidden">Entregar Boletos</div>
+            <div class="flow-desc en-t">Guest keeps stub. Encourage them to shop & eat while waiting</div>
+            <div class="flow-desc es-t hidden">El invitado guarda su boleto. Anímalos a comprar y comer mientras esperan</div>
+          </div>
+          <div class="flow-card">
+            <div class="flow-num">05</div>
+            <div class="flow-title en-t">Maria Records</div>
+            <div class="flow-title es-t hidden">Maria Graba</div>
+            <div class="flow-desc en-t">Crowd energy, entry lines, vendors busy, all reactions — marketing gold</div>
+            <div class="flow-desc es-t hidden">Energía del público, filas, vendedores ocupados, reacciones — contenido valioso</div>
+          </div>
+          <div class="flow-card">
+            <div class="flow-num">06</div>
+            <div class="flow-title en-t">Announce at 1:45</div>
+            <div class="flow-title es-t hidden">Anunciar a la 1:45</div>
+            <div class="flow-desc en-t">Remind guests: drawing starts at 2 PM sharp, must be present to win</div>
+            <div class="flow-desc es-t hidden">Recordar: el sorteo empieza a las 2 PM en punto, deben estar presentes</div>
+          </div>
+        </div>
+
+        <div class="sh en-t">Drawing at 2:00 PM</div>
+        <div class="sh es-t hidden">Sorteo a las 2:00 PM</div>
+        <div class="flow-grid">
+          <div class="flow-card">
+            <div class="flow-num">07</div>
+            <div class="flow-title en-t">Start Small</div>
+            <div class="flow-title es-t hidden">Empezar con el Menor</div>
+            <div class="flow-desc en-t">Draw 7th place first ($300), build hype toward the $1,500 Grand Prize</div>
+            <div class="flow-desc es-t hidden">Sortear 7mo lugar primero ($300), construir emoción hacia el Gran Premio de $1,500</div>
+          </div>
+          <div class="flow-card">
+            <div class="flow-num">08</div>
+            <div class="flow-title en-t">30-Second Rule</div>
+            <div class="flow-title es-t hidden">Regla de 30 Segundos</div>
+            <div class="flow-desc en-t">Call number loudly, count 30 seconds. No response = redraw. No exceptions</div>
+            <div class="flow-desc es-t hidden">Anunciar en voz alta, contar 30 segundos. Sin respuesta = nuevo boleto. Sin excepciones</div>
+          </div>
+          <div class="flow-card">
+            <div class="flow-num">09</div>
+            <div class="flow-title en-t">Verify & Pay</div>
+            <div class="flow-title es-t hidden">Verificar y Pagar</div>
+            <div class="flow-desc en-t">Winner shows matching stub + valid ID. Staff pays cash on the spot</div>
+            <div class="flow-desc es-t hidden">Ganador muestra boleto + ID válida. El personal paga en efectivo al momento</div>
+          </div>
+          <div class="flow-card">
+            <div class="flow-num">10</div>
+            <div class="flow-title en-t">Record Everything</div>
+            <div class="flow-title es-t hidden">Grabar Todo</div>
+            <div class="flow-desc en-t">Every winner reaction, every spin. Post to Instagram same day</div>
+            <div class="flow-desc es-t hidden">Cada reacción de ganador, cada giro. Publicar en Instagram el mismo día</div>
+          </div>
+        </div>
+
+        <div class="order-box">
+          <div class="sh" style="border:none;padding:0;font-size:16px;">
+            <span class="en-t">Drawing Order — Smallest to Largest</span>
+            <span class="es-t hidden">Orden del Sorteo — De Menor a Mayor</span>
+          </div>
+          <div class="order-items">
+            <div class="order-item"><span class="en-t">7th Place</span><span class="es-t hidden">7mo Lugar</span><span>$300</span></div>
+            <div class="order-item"><span class="en-t">6th Place</span><span class="es-t hidden">6to Lugar</span><span>$350</span></div>
+            <div class="order-item"><span class="en-t">5th Place</span><span class="es-t hidden">5to Lugar</span><span>$450</span></div>
+            <div class="order-item"><span class="en-t">4th Place</span><span class="es-t hidden">4to Lugar</span><span>$600</span></div>
+            <div class="order-item"><span class="en-t">3rd Place</span><span class="es-t hidden">3er Lugar</span><span>$800</span></div>
+            <div class="order-item"><span class="en-t">2nd Place</span><span class="es-t hidden">2do Lugar</span><span>$1,000</span></div>
+            <div class="order-item"><span class="en-t">1st — Grand Prize</span><span class="es-t hidden">1er — Gran Premio</span><span>$1,500</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="banner">
+        <span class="highlight">$5,000</span>
+        <span class="en-t">total · exactly 7 winners</span>
+        <span class="es-t hidden">total · exactamente 7 ganadores</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- RULES TAB -->
+  <div id="tab-rules" class="hidden">
+    <div class="flyer">
+      <div class="fh">
+        <div class="brand">Plaza Latina</div>
+        <div class="presents en-t">Official Rules & Disclosures</div>
+        <div class="presents es-t hidden">Reglamento Oficial y Divulgaciones</div>
+        <div class="giveaway en-t">$5,000 Cash Giveaway</div>
+        <div class="giveaway es-t hidden">Sorteo de $5,000 en Efectivo</div>
+        <div class="subtitle en-t">7 Winners — Read Before Participating</div>
+        <div class="subtitle es-t hidden">7 Ganadores — Lee Antes de Participar</div>
+      </div>
+      <div class="fb">
+
+        <div class="legal-section">
+          <div class="sh en-t">Eligibility</div>
+          <div class="sh es-t hidden">Elegibilidad</div>
+          <ul class="rules-list">
+            <li><span class="icon">&#10003;</span><span class="en-t">Open to individuals 18 years of age or older at time of entry.</span><span class="es-t hidden">Abierto a personas de 18 años o más al momento de participar.</span></li>
+            <li><span class="icon">&#10003;</span><span class="en-t">Employees, contractors, and immediate family members of Plaza Latina are not eligible.</span><span class="es-t hidden">Empleados, contratistas y familiares inmediatos de Plaza Latina no son elegibles.</span></li>
+            <li><span class="icon">&#10003;</span><span class="en-t">Void where prohibited by law. Participants are responsible for compliance with local regulations.</span><span class="es-t hidden">Nulo donde lo prohíba la ley. Los participantes son responsables de cumplir con las regulaciones locales.</span></li>
+          </ul>
+        </div>
+
+        <div class="legal-section">
+          <div class="sh en-t">Ticket Purchase & Entry</div>
+          <div class="sh es-t hidden">Compra de Boletos y Participación</div>
+          <ul class="rules-list">
+            <li><span class="icon">&#10003;</span><span class="en-t">Tickets are $5.00 USD each. Maximum of 5 tickets per person per event.</span><span class="es-t hidden">Los boletos cuestan $5.00 USD cada uno. Máximo 5 boletos por persona por evento.</span></li>
+            <li><span class="icon">&#10003;</span><span class="en-t">Participants must show proof of following Plaza Latina's official Instagram account to purchase tickets.</span><span class="es-t hidden">Los participantes deben mostrar prueba de seguir la cuenta oficial de Instagram de Plaza Latina para comprar boletos.</span></li>
+            <li><span class="icon">&#10003;</span><span class="en-t">Tickets sold at the front entrance only. No remote or online purchases accepted.</span><span class="es-t hidden">Boletos vendidos solo en la entrada. No se aceptan compras remotas ni en línea.</span></li>
+            <li><span class="icon">&#10003;</span><span class="en-t">All ticket sales are final. No refunds under any circumstances.</span><span class="es-t hidden">Todas las ventas son definitivas. No hay reembolsos bajo ninguna circunstancia.</span></li>
+            <li><span class="icon">&#10003;</span><span class="en-t">Participants must retain their physical ticket stub. Lost or damaged tickets cannot be replaced.</span><span class="es-t hidden">Los participantes deben conservar su boleto físico. Los boletos perdidos o dañados no se reemplazan.</span></li>
+          </ul>
+        </div>
+
+        <div class="legal-section">
+          <div class="sh en-t">Drawing & Prize Claim</div>
+          <div class="sh es-t hidden">Sorteo y Reclamación de Premio</div>
+          <ul class="rules-list">
+            <li><span class="icon">&#10003;</span><span class="en-t">Drawing held live at 2:00 PM. Winners selected by random draw. 7 total winners.</span><span class="es-t hidden">Sorteo en vivo a las 2:00 PM. Ganadores seleccionados al azar. 7 ganadores en total.</span></li>
+            <li><span class="icon">&#10003;</span><span class="en-t">Prizes announced smallest to largest: 7th ($300) through Grand Prize 1st ($1,500).</span><span class="es-t hidden">Premios anunciados de menor a mayor: 7mo ($300) hasta el Gran Premio 1er lugar ($1,500).</span></li>
+            <li><span class="icon">&#10003;</span><span class="en-t">Winner must present themselves and their matching ticket stub within 30 seconds of their number being called. Failure to claim forfeits the prize and a new ticket is drawn.</span><span class="es-t hidden">El ganador debe presentarse con su boleto en 30 segundos. No reclamar resulta en pérdida del premio y se saca otro boleto.</span></li>
+            <li><span class="icon">&#10003;</span><span class="en-t">Must be physically present at the venue. No proxy claims permitted.</span><span class="es-t hidden">Debe estar físicamente presente en el lugar. No se permiten reclamaciones por terceros.</span></li>
+            <li><span class="icon">&#10003;</span><span class="en-t">Valid government-issued photo ID required to claim prize.</span><span class="es-t hidden">Se requiere identificación oficial con foto para reclamar el premio.</span></li>
+            <li><span class="icon">&#10003;</span><span class="en-t">Cash prizes paid on-site. Total prize pool: $5,000 across exactly 7 winners.</span><span class="es-t hidden">Premios en efectivo pagados en el lugar. Premio total: $5,000 entre exactamente 7 ganadores.</span></li>
+          </ul>
+        </div>
+
+        <div class="legal-section">
+          <div class="sh en-t">Taxes & Reporting</div>
+          <div class="sh es-t hidden">Impuestos y Declaración</div>
+          <ul class="rules-list">
+            <li><span class="icon">&#10003;</span><span class="en-t">All prizes subject to applicable federal, state, and local taxes. Winners are solely responsible for any taxes owed.</span><span class="es-t hidden">Todos los premios están sujetos a impuestos. Los ganadores son responsables de los impuestos correspondientes.</span></li>
+            <li><span class="icon">&#10003;</span><span class="en-t">Winners receiving $600 or more may be required to provide SSN or ITIN for IRS Form 1099 reporting purposes.</span><span class="es-t hidden">Los ganadores que reciban $600 o más podrían requerir SSN o ITIN para el formulario 1099 del IRS.</span></li>
+          </ul>
+        </div>
+
+        <div class="legal-section">
+          <div class="sh en-t">General & Publicity</div>
+          <div class="sh es-t hidden">General y Publicidad</div>
+          <ul class="rules-list">
+            <li><span class="icon">&#10003;</span><span class="en-t">By participating, entrants consent to being photographed and/or recorded for promotional use by Plaza Latina.</span><span class="es-t hidden">Al participar, los participantes dan consentimiento para ser fotografiados/grabados con fines promocionales por Plaza Latina.</span></li>
+            <li><span class="icon">&#10003;</span><span class="en-t">Plaza Latina is not responsible for lost, stolen, or counterfeit tickets.</span><span class="es-t hidden">Plaza Latina no es responsable por boletos perdidos, robados o falsificados.</span></li>
+            <li><span class="icon">&#10003;</span><span class="en-t">Staff decisions regarding prizes and rule interpretation are final and binding.</span><span class="es-t hidden">Las decisiones del personal sobre premios e interpretación de reglas son definitivas y vinculantes.</span></li>
+            <li><span class="icon">&#10003;</span><span class="en-t">This promotion is not sponsored, endorsed, or administered by Instagram or Meta Platforms, Inc.</span><span class="es-t hidden">Esta promoción no está patrocinada ni administrada por Instagram o Meta Platforms, Inc.</span></li>
+          </ul>
+        </div>
+
+        <div class="footer-legal">
+          <span class="en-t">Sponsor: Plaza Latina &nbsp;·&nbsp; Euless, TX &nbsp;·&nbsp; @PlazaLatina &nbsp;·&nbsp; Total Prize Pool: $5,000</span>
+          <span class="es-t hidden">Patrocinador: Plaza Latina &nbsp;·&nbsp; Euless, TX &nbsp;·&nbsp; @PlazaLatina &nbsp;·&nbsp; Premio Total: $5,000</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SHARE TAB -->
+  <div id="tab-share" class="hidden">
+    <div class="share-section">
+      <div class="share-title en-t">Share This Event</div>
+      <div class="share-title es-t hidden">Comparte Este Evento</div>
+      <div class="share-sub en-t">Send this page to anyone — it opens in any browser, on any phone or computer. No app needed.</div>
+      <div class="share-sub es-t hidden">Envía esta página a cualquiera — se abre en cualquier navegador, en cualquier teléfono o computadora. No necesita ninguna aplicación.</div>
+      <div class="share-btns">
+        <button class="share-btn btn-copy" onclick="copyLink()">
+          &#128203; <span class="en-t">Copy Link to Share</span><span class="es-t hidden">Copiar Enlace</span>
+        </button>
+        <a class="share-btn btn-whatsapp" id="wa-btn" href="#">
+          &#128172; <span class="en-t">Share via WhatsApp</span><span class="es-t hidden">Compartir por WhatsApp</span>
+        </a>
+        <a class="share-btn btn-sms" id="sms-btn" href="#">
+          &#128241; <span class="en-t">Share via Text Message</span><span class="es-t hidden">Compartir por Mensaje de Texto</span>
+        </a>
+      </div>
+      <div class="copied-msg en-t" id="copied-en">Link copied! Paste it anywhere to share.</div>
+      <div class="copied-msg es-t hidden" id="copied-es">Enlace copiado. Pégalo donde quieras para compartir.</div>
+    </div>
+
+    <div class="flyer" style="padding:20px 18px;">
+      <div class="sh en-t">How to Share</div>
+      <div class="sh es-t hidden">Cómo Compartir</div>
+      <ul class="rules-list" style="margin-top:4px;">
+        <li><span class="icon">&#9654;</span><span class="en-t">Copy the link above and paste it into Instagram DMs, Facebook, WhatsApp groups, or any text</span><span class="es-t hidden">Copia el enlace y pégalo en mensajes de Instagram, Facebook, grupos de WhatsApp o cualquier texto</span></li>
+        <li><span class="icon">&#9654;</span><span class="en-t">Recipients can switch between English and Spanish using the EN / ES toggle</span><span class="es-t hidden">Los destinatarios pueden cambiar entre inglés y español usando el botón EN / ES</span></li>
+        <li><span class="icon">&#9654;</span><span class="en-t">Works on any phone or computer — no app or login required</span><span class="es-t hidden">Funciona en cualquier teléfono o computadora — no requiere ninguna aplicación ni inicio de sesión</span></li>
+        <li><span class="icon">&#9654;</span><span class="en-t">Add your QR code image to the Flyer tab so guests can scan directly to your Instagram</span><span class="es-t hidden">Agrega tu imagen de código QR a la pestaña del Volante para que los invitados puedan escanear directo a tu Instagram</span></li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+
+<script>
+var lang = 'en';
+
+function setLang(l) {
+  lang = l;
+  document.getElementById('btn-en').classList.toggle('active', l === 'en');
+  document.getElementById('btn-es').classList.toggle('active', l === 'es');
+  document.querySelectorAll('.en-t').forEach(function(el){ el.classList.toggle('hidden', l !== 'en'); });
+  document.querySelectorAll('.es-t').forEach(function(el){ el.classList.toggle('hidden', l !== 'es'); });
+  updateShareLinks();
+}
+
+function showTab(id) {
+  ['flyer','flow','rules','share'].forEach(function(t){
+    document.getElementById('tab-' + t).classList.add('hidden');
+  });
+  document.getElementById('tab-' + id).classList.remove('hidden');
+  document.querySelectorAll('.tab').forEach(function(b, i){
+    b.classList.toggle('active', ['flyer','flow','rules','share'][i] === id);
+  });
+}
+
+function copyLink() {
+  var url = window.location.href;
+  if (navigator.clipboard) {
+    navigator.clipboard.writeText(url).then(function(){
+      showCopied();
+    });
+  } else {
+    var ta = document.createElement('textarea');
+    ta.value = url;
+    document.body.appendChild(ta);
+    ta.select();
+    document.execCommand('copy');
+    document.body.removeChild(ta);
+    showCopied();
+  }
+}
+
+function showCopied() {
+  var enMsg = document.getElementById('copied-en');
+  var esMsg = document.getElementById('copied-es');
+  if (lang === 'en') { enMsg.style.display = 'block'; setTimeout(function(){ enMsg.style.display='none'; }, 3000); }
+  else { esMsg.style.display = 'block'; setTimeout(function(){ esMsg.style.display='none'; }, 3000); }
+}
+
+function updateShareLinks() {
+  var url = encodeURIComponent(window.location.href);
+  var enMsg = encodeURIComponent('Plaza Latina $5,000 Cash Giveaway! 7 Winners · Drawing at 2PM · $5 tickets, follow on Instagram to enter: ');
+  var esMsg = encodeURIComponent('Sorteo de $5,000 de Plaza Latina! 7 Ganadores · Sorteo a las 2PM · Boletos $5, sigue en Instagram para participar: ');
+  var msg = lang === 'en' ? enMsg : esMsg;
+  document.getElementById('wa-btn').href = 'https://wa.me/?text=' + msg + url;
+  document.getElementById('sms-btn').href = 'sms:?body=' + msg + url;
+}
+
+updateShareLinks();
+</script>
+</body>
+</html>
